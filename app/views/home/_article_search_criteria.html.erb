@@ -1,0 +1,25 @@
+<div class="search" style="border: 1px; box-sizing: border-box; margin-top: 30px; background-color: rgb(247, 247, 249);">
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label class="category" for="category">Category: </label>
+
+            <%= select_tag(:category, options_for_select([['All',1],['Knowledge Base Article', 2],['Product Document',2],['Presentation Document',3],['Webcast',4]]), {:class => 'btn btn-default dropdown-toggle', :style => 'width:120px' }) %>
+        </div>
+
+        <div class="form-group">
+            <label class="and_or" for="and_or">And/Or: </label>
+            <%= select_tag(:and_or, options_for_select([['Any',1],['And',2],['Or',3]]), {:class => 'btn btn-default dropdown-toggle', :style => 'width:120px' }) %>
+        </div>
+
+        <div class="form-group">
+            <label class="search_by" for="search_by">Search By: </label>
+            <%= select_tag(:search_by, options_for_select([['Phrases',1],['Article Id',2],['Author',3]]), {:class => 'btn btn-default dropdown-toggle', :style => 'width:150px' }) %>
+        </div>
+
+        <div class="form-group">
+            <label class="search_text" for="search_text">Search Text: </label>
+            <input type="search" class="form-control" id="search_text" placeholder="Enter Search Text">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
+</div>
