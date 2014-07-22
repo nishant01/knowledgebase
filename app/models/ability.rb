@@ -2,6 +2,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+      user.roles.each { |role|
+          role.permissions.each { |permission|
+              can permission.conduct.to_sym,
+                  permission.regulator.constantize
+          }
+      }
+  end
+
+  def initialize_old(user)
     # Define abilities for the passed in user here. For example:
     #
        user ||= User.new # guest user (not logged in)

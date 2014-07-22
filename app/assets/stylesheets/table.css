@@ -1,0 +1,49 @@
+/*
+Document   : tables
+Created on : Apr 19, 2012
+Author     : lynchcs
+*/
+.showTableBorder {
+    border-style: solid;
+    border-color: Black;
+    border-left-width: .2em;
+    border-right-width: .2em;
+    border-top-width: .15em;
+    border-bottom-width: .15em;
+    padding: 0px;  margin: 0px;
+    border-collapse: 0px;
+    border-spacing: 0px;
+}
+
+.showTableBorder td, .showTableBorder th {
+    padding: .5em;
+}
+
+.showTableBorder tr {
+    border-style: solid;
+    border-color: Black;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.showTableBorder th {
+    border-style: solid;
+    border-color: Black;
+    border-width: .05em;
+    border-bottom-width: .1em;
+}
+
+.showTableBorder td {
+    border-style: solid;
+    border-color: Black;
+    border-width: .05em;
+}
+
+.showTableBorder .firstCell {
+    border-left-width: 0px;
+}
+
+.showTableBorder .lastCell {
+    border-right-width: 0px;
+}

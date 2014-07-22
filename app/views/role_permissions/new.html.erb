@@ -1,5 +1,3 @@
-<h1>New role_permission</h1>
-
+<h3>New Permission</h3>
 <%= render 'form' %>
-
-<%= link_to 'Back', role_permissions_path %>
+<%= link_to 'Back', role_permissions_path(:role_id => params[:role_id]), :class => 'ajaxLink' %>

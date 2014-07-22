@@ -1,6 +1,4 @@
-<h1>Editing role_permission</h1>
-
+<h1>Edit Permission</h1>
 <%= render 'form' %>
-
-<%= link_to 'Show', @role_permission %> |
-<%= link_to 'Back', role_permissions_path %>
+<%= link_to 'Show', @role_permission, :class => 'ajaxLink' %> |<%= link_to 'Back', role_permissions_path(:role_id => @role_permission.role_id), :class => 'ajaxLink' %>
+<%= render 'javascript' %>
