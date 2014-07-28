@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140704121459) do
+ActiveRecord::Schema.define(:version => 20140728164748) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "is_live"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "role_permissions", :force => true do |t|
+    t.integer  "role_id"
+    t.string   "regulator"
+    t.string   "conduct"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "role_roles", :force => true do |t|
     t.integer  "role_id"
@@ -24,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20140704121459) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "sub_categories", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "is_live"
+    t.integer  "category_id"
+    t.integer  "sub_category_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "user_roles", :force => true do |t|

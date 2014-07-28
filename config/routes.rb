@@ -5,6 +5,7 @@ Knowledgebase::Application.routes.draw do
 
   resources :roles
   resources :users
+  resources :categories
   devise_for :users, :path => 'user'
 
   get "home/index"
