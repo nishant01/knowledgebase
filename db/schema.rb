@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140728164748) do
+ActiveRecord::Schema.define(:version => 20140730184558) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "summary",                            :null => false
+    t.text     "description",                        :null => false
+    t.text     "resolution",                         :null => false
+    t.string   "notes"
+    t.string   "attachment_path"
+    t.string   "type"
+    t.integer  "ref_article_id"
+    t.integer  "user_id",                            :null => false
+    t.integer  "is_approved",         :default => 0, :null => false
+    t.integer  "category_id"
+    t.integer  "sub_category_id"
+    t.integer  "is_alive"
+    t.integer  "approved_by_user_id"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -19,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20140728164748) do
     t.integer  "is_live"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name",                       :null => false
+    t.text     "description"
+    t.integer  "manager_id",                 :null => false
+    t.integer  "is_alive",    :default => 1, :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "role_permissions", :force => true do |t|
@@ -76,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20140728164748) do
     t.text     "address"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "department_id",                          :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
