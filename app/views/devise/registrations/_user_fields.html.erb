@@ -1,4 +1,12 @@
 <div>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :surname %><br />
+  <%= f.text_field :surname %>
+</div>
+<div>
   <%= f.label :email %><br />
   <%= f.email_field :email %>
 </div>
@@ -11,4 +19,17 @@
   <%= f.label :password_confirmation %>
   <br />
   <%= f.password_field :password_confirmation %>
+</div>
+
+<div>
+  <%= f.label :contact %><br />
+  <%= f.text_field :contact %>
+</div>
+<div>
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+</div>
+<div>
+  <%= f.label :department %><br />
+  <%= f.collection_select(:department_id, Department.all, :id, :name) %>
 </div>
