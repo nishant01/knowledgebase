@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1366716605">
-    <data-source source="LOCAL" name="Rails knowledgebase: development" uuid="901c9a8c-ed7c-4f16-b1cb-c0ea40159819">
-      <driver-ref>mysql</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/kowledgebase_development</jdbc-url>
-      <user-name>root</user-name>
-      <libraries />
-    </data-source>
-    <data-source source="LOCAL" name="Rails knowledgebase: test" uuid="fde97454-6c03-4adb-8dff-d6edc36f1644">
-      <driver-ref>mysql</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/kowledgebase_test</jdbc-url>
-      <user-name>root</user-name>
-      <libraries />
-    </data-source>
-    <data-source source="LOCAL" name="Rails knowledgebase: production" uuid="a41ef01a-277a-4ef1-beee-104d408b027f">
-      <driver-ref>mysql</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/kowledgebase_prodduction</jdbc-url>
-      <user-name>root</user-name>
-      <libraries />
-    </data-source>
-  </component>
+  <component name="DataSourceManagerImpl" compressed="false" hash="3129589166" />
 </project>
 

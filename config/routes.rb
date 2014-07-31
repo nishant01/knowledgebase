@@ -2,7 +2,7 @@ Knowledgebase::Application.routes.draw do
 
   resources :role_permissions
 
-
+  resources :departments
   resources :roles
   resources :users
   resources :categories
