@@ -3,7 +3,7 @@ Knowledgebase::Application.routes.draw do
   resources :role_permissions
 
   scope "admin" do
-    resources :admin, :departments, :roles, :categories, :sub_categories
+    resources :departments, :roles, :categories, :sub_categories
   end
 
   resources :users
@@ -62,7 +62,7 @@ Knowledgebase::Application.routes.draw do
   # just remember to delete public/index.html.
 
     root :to => 'home#index'
-    match 'admin' => "admin#index"
+    match 'admin' => "departments#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -24,7 +24,7 @@
     <%= f.collection_select(:category_id, Category.all, :id, :title) %>
 
     <%= f.label :sub_category %>
-    <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :title) %>
+    <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :title, :include_blank => "") %>
 
     <%=f.submit "Create"%>
 <%end%>

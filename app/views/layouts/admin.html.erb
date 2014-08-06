@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <title>Nishnat's Project - Admin</title>
         <!-- Bootstrap Core CSS -->
-        <%= stylesheet_link_tag "admin" %>
+        <%= stylesheet_link_tag "application" %>
         <%= stylesheet_link_tag    params[:controller] %>
         <%= javascript_include_tag "application"%>
         <%= javascript_include_tag params[:controller] %>
@@ -30,7 +30,7 @@
                         </a>
                         <ul id="department" class="collapse">
                             <li>
-                              <%= link_to 'Department List', "departments" %>
+                              <%= link_to 'Department List', departments_path %>
                             </li>
                         </ul>
                     </li>
@@ -40,7 +40,7 @@
                         </a>
                         <ul id="role" class="collapse">
                             <li>
-                                <%= link_to 'Role List', "roles" %>
+                                <%= link_to 'Role List', roles_path %>
                             </li>
                         </ul>
                     </li>
@@ -50,7 +50,7 @@
                         </a>
                         <ul id="category" class="collapse">
                             <li>
-                                <%= link_to 'Category List', "categories" %>
+                                <%= link_to 'Category List', categories_path %>
                             </li>
                         </ul>
                     </li>
@@ -60,7 +60,7 @@
                         </a>
                         <ul id="sub-category" class="collapse">
                             <li>
-                                <%= link_to 'Sub Category List', "sub_categories" %>
+                                <%= link_to 'Sub Category List', sub_categories_path %>
                             </li>
                         </ul>
                     </li>

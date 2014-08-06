@@ -1,10 +1,29 @@
 <h1>Listing roles</h1>
-<%= link_to 'New Role', new_role_path %>
+
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.description %></td>
+        <td><%= link_to 'Show', role %></td>
+        <td><%= link_to 'Edit', edit_role_path(role) %></td>
+        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
 <br />
-<ul>
+<%= link_to 'New Role', new_role_path %>
+
+<!--<ul>
     <li class="listNoDecorate">
         <span class="roleDescription">Role Name</span>
         <span class="roleCommands">[Commands]</span>
     </li>
     <%=  build_role_list('indexrow') %>
-</ul>
+</ul>-->
