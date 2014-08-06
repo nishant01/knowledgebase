@@ -2,14 +2,14 @@ Knowledgebase::Application.routes.draw do
 
   resources :role_permissions
 
-  resources :departments
-  resources :roles
+  scope "admin" do
+    resources :admin, :departments, :roles, :categories, :sub_categories
+  end
+
   resources :users
-  resources :categories
-  resources :sub_categories
   devise_for :users, :path => 'user'
 
-  get "home/index"
+  #get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,6 +62,7 @@ Knowledgebase::Application.routes.draw do
   # just remember to delete public/index.html.
 
     root :to => 'home#index'
+    match 'admin' => "admin#index"
 
   # See how all your routes lay out with "rake routes"
 

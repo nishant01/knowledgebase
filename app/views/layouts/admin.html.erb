@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Nishnat's Project - Admin</title>
+        <!-- Bootstrap Core CSS -->
+        <%= stylesheet_link_tag "admin" %>
+        <%= stylesheet_link_tag    params[:controller] %>
+        <%= javascript_include_tag "application"%>
+        <%= javascript_include_tag params[:controller] %>
+        <%= csrf_meta_tags %>
+    </head>
+
+    <body>
+        <%= render "layouts/top_nav_bar" %>
+        <div id="wrapper" style="margin-top: 50px">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">Start Bootstrap</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#department">
+                            <i class="fa fa-fw fa-arrows-v"></i> Department <i class="fa fa-fw fa-caret-down"></i>
+                        </a>
+                        <ul id="department" class="collapse">
+                            <li>
+                              <%= link_to 'Department List', "departments" %>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#role">
+                            <i class="fa fa-fw fa-arrows-v"></i> Role <i class="fa fa-fw fa-caret-down"></i>
+                        </a>
+                        <ul id="role" class="collapse">
+                            <li>
+                                <%= link_to 'Role List', "roles" %>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#category">
+                            <i class="fa fa-fw fa-arrows-v"></i> Category <i class="fa fa-fw fa-caret-down"></i>
+                        </a>
+                        <ul id="category" class="collapse">
+                            <li>
+                                <%= link_to 'Category List', "categories" %>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#sub-category">
+                            <i class="fa fa-fw fa-arrows-v"></i> Sub Category <i class="fa fa-fw fa-caret-down"></i>
+                        </a>
+                        <ul id="sub-category" class="collapse">
+                            <li>
+                                <%= link_to 'Sub Category List', "sub_categories" %>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="notice"><%= notice %></p>
+                        <p class="alert"><%= alert %></p>
+                        <div class="col-lg-12">
+                            <%= content_for?(:content) ? yield(:content) : yield %>
+                            <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+        $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        });
+        </script>
+    </body>
+
+</html>

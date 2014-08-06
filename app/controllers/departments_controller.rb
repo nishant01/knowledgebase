@@ -1,4 +1,5 @@
 class DepartmentsController < ApplicationController
+    layout "admin"
     def index
         @departments = Department.all
         respond_to do |format|

@@ -1,5 +1,5 @@
 class SubCategoriesController < ApplicationController
-
+    layout "admin"
     def index
         @sub_categories = SubCategory.all
 

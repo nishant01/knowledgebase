@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize_new(user)
       user.roles.each { |role|
           role.permissions.each { |permission|
               can permission.conduct.to_sym,

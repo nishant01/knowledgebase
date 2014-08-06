@@ -7,36 +7,14 @@
         <title>Nishant's Project</title>
 
         <!-- Bootstrap -->
-        <%= stylesheet_link_tag "bootstrap" %>
+        <%= stylesheet_link_tag "application" %>
         <%= stylesheet_link_tag    params[:controller] %>
-        <%= javascript_include_tag "application", "bootstrap"%>
+        <%= javascript_include_tag "application"%>
         <%= javascript_include_tag params[:controller] %>
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Nishant</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <% if user_signed_in? -%>
-                        <%= current_user.email %> | <%= link_to 'My info', edit_user_registration_path %> | <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-                    <% else %>
-                        <form class="navbar-form navbar-right" role="form">
-                            <div class="form-group">
-                                <input type="text" placeholder="Email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="Password" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-success">Sign in</button>
-                        </form>
-                  <%end%>
-                </div>
-            </div>
-        </div>
-
+        <%= render "layouts/top_nav_bar" %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 
