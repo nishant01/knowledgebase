@@ -1,5 +1,6 @@
 class DepartmentsController < ApplicationController
     layout "admin"
+    before_filter :authenticate_user!
     def index
         @departments = Department.all
         respond_to do |format|

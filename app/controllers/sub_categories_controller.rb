@@ -1,5 +1,6 @@
 class SubCategoriesController < ApplicationController
     layout "admin"
+    before_filter :authenticate_user!
     def index
         @sub_categories = SubCategory.all
 

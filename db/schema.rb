@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20140731184611) do
     t.text     "address"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "department_id",                          :null => false
+    t.integer  "department_id",          :default => 0,  :null => false
     t.integer  "is_manager",             :default => 0
   end
 

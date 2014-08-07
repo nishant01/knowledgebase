@@ -3,10 +3,9 @@ Knowledgebase::Application.routes.draw do
   resources :role_permissions
 
   scope "admin" do
-    resources :departments, :roles, :categories, :sub_categories
+    resources :users, :departments, :roles, :categories, :sub_categories
   end
 
-  resources :users
   devise_for :users, :path => 'user'
 
   #get "home/index"

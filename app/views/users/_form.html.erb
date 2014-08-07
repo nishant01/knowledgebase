@@ -10,10 +10,27 @@
         </div>
     <% end %>
     <%= render :partial => '/devise/registrations/user_fields' , :locals => {:f => f} %>
+
+    <div>
+      <%= f.label :department %><br />
+      <%= f.collection_select(:department_id, Department.all, :id, :name) %>
+    </div>
+
+    <div>
+      <%= f.label :role %><br />
+      <%= f.collection_select(:role_ids, Role.all, :id, :description) %>
+    </div>
+
+    <div>
+      <%= f.label :is_manager %><br />
+      <%= f.check_box :is_manager %>
+    </div>
     <br>
     <!--<div class="field">
         <%= f.label 'Roles' %><br />
-        <%=  build_role_list('/users/role_checkbox') %>  </div>  <div class="actions">-->
+        <%=  build_role_list('/users/role_checkbox') %>
+    </div>  -->
+    <div class="actions">
         <%= f.submit %>
     </div>
 <% end %>

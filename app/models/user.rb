@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     has_many :roles, :through => :user_roles
     has_many :articles
     belongs_to :departments
-    after_save :check_and_add_manager
+    #after_save :check_and_add_manager
 
     # Include default devise modules. Others available are:
     # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
