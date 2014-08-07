@@ -1,0 +1,40 @@
+<%= form_for @article do |f| %>
+    <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@article.errors.count, "error") %> prohibited this department from being saved:</h2>
+
+          <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%=f.label :summary%>
+    <%= f.text_field :summary%>
+
+    <%=f.label :description%>
+    <%=f.text_area :description%>
+
+    <%=f.label :solution%>
+    <%= f.text_area :resolution%>
+
+    <%=f.label :type%>
+    <%= f.select(:type, options_for_select([["--", 0],["Original", 1], ["Update", 2]])) %>
+
+    <%=f.label :category%>
+    <%=f.collection_select(:category_id, Category.all, :id, :title,)%>
+
+    <%=f.label :ref_article_id%>
+    <%= f.text_field :ref_article_id%>
+
+    <%=f.label :notes%>
+    <%=f.text_area :notes%>
+
+    <%=f.label :attachment_path%>
+    <%= f.text_field :attachment_path%>
+
+
+    <%=f.submit "Create"%>
+<%end%>

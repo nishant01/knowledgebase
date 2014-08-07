@@ -1,6 +1,6 @@
 Knowledgebase::Application.routes.draw do
 
-  resources :role_permissions
+  resources :role_permissions, :articles
 
   scope "admin" do
     resources :users, :departments, :roles, :categories, :sub_categories
@@ -60,7 +60,7 @@ Knowledgebase::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-    root :to => 'home#index'
+    root :to => 'articles#index'
     match 'admin' => "departments#index"
 
   # See how all your routes lay out with "rake routes"
