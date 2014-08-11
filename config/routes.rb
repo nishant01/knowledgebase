@@ -62,6 +62,7 @@ Knowledgebase::Application.routes.draw do
 
     root :to => 'articles#index'
     match 'admin' => "departments#index"
+  match 'admin/pending_article' => "articles#pending_article"
 
   # See how all your routes lay out with "rake routes"
 

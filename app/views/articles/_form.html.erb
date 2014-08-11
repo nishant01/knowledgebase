@@ -21,7 +21,7 @@
     <%= f.text_area :resolution%>
 
     <%=f.label :type%>
-    <%= f.select(:type, options_for_select([["--", 0],["Original", 1], ["Update", 2]])) %>
+    <%= f.select(:article_type, options_for_select([["--", 0],["Original", 1], ["Update", 2]])) %>
 
     <%=f.label :category%>
     <%=f.collection_select(:category_id, Category.all, :id, :title,)%>

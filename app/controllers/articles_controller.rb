@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @article = Article.all
+    @articles = Article.where(:is_approved => 1)
 
     respond_to do |format|
       format.html
@@ -20,8 +20,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:category])
-
+    @article = Article.new(params[:article])
+    @article.user_id = current_user.id
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -32,5 +32,17 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
+  def pending_article
+    users  = User.select(:id).where(:department_id => current_user.department_id)
+
+    users.each do |user|
+      @articles = user.articles.where(:is_approved => 0)
+    end
+
+    render :layout => "admin"
+  end
+
+
 
 end

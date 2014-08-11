@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140731184611) do
+ActiveRecord::Schema.define(:version => 20140811143621) do
 
   create_table "articles", :force => true do |t|
     t.string   "summary",                            :null => false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20140731184611) do
     t.text     "resolution",                         :null => false
     t.string   "notes"
     t.string   "attachment_path"
-    t.string   "type"
+    t.string   "article_type"
     t.integer  "ref_article_id"
     t.integer  "user_id",                            :null => false
     t.integer  "is_approved",         :default => 0, :null => false

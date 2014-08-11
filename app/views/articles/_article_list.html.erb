@@ -1,0 +1,27 @@
+
+<div id="article-list" style="border: 1px; box-sizing: border-box; margin-top: 20px; background-color: rgb(247, 247, 249);">
+  <label>Article Found</label>
+</div>
+
+<table class="table table-hover table-striped">
+  <tr>
+    <th>No</th>
+    <th>Article Id</th>
+    <th>Summary</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Sub Category</th>
+  </tr>
+
+  <% @articles.each do |article| %>
+      <tr>
+        <td></td>
+        <td><%= article.id %></td>
+        <td><%= article.summary %></td>
+        <td><%= article.user.name %></td>
+        <td><%=article.category.title%></td>
+        <td></td>
+        <td></td>
+      </tr>
+  <% end %>
+</table>
