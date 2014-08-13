@@ -36,10 +36,7 @@ class ArticlesController < ApplicationController
   def pending_article
     users  = User.select(:id).where(:department_id => current_user.department_id)
 
-    users.each do |user|
-      @articles = user.articles.where(:is_approved => 0)
-    end
-
+    @articles = Article.where(user_id: users, is_approved: 0)
     render :layout => "admin"
   end
 
